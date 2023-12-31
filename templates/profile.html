@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="uk-child-width-expand@s uk-text-center" uk-grid>
+    <div class="uk-width-1-1" >
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+            <div class="uk-card-media-left uk-cover-container uk-width-1-4" style="margin-left: 10px">
+                <img src="{{ student.stu_image_url }}"  alt="" uk-cover >
+                 <a href="#modal-example1"  class="uk-align-right" uk-icon="icon: image; ratio: 2" uk-toggle></a>
+            </div>
+            <div>
+                <div class="uk-card-body">
+                    <div class="uk-grid-divider uk-child-width-expand@s" uk-grid>
+                        <div class="uk-text-left">
+                            <h3 class="uk-card-title">{{ student.stu_name }}</h3>
+                            <p><b>Roll No :</b>  {{ student.stu_roll }}</p>
+                            <p><b>Email :</b> {{ student.stu_mail }}</p>
+                            <p><b>Mobile :</b>  {{ student.stu_mobile }}</p>
+                            <p><b>Address :</b>  {{ student.stu_address }}</p>
+                        </div>
+                        <div class="uk-text-left">
+                            <p><b>Branch :</b>  {{ branch.stu_branch }}</p>
+                            <p><b>Course :</b>  {{ course.stu_course }}</p>
+                            <p><b>Semester :</b>  {{ semester.stu_semester }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="modal-example1" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-align-center">
+            <form method="post" class="uk-align-center" action="/home/upload_pic" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="uk-margin uk-align-center" uk-margin>
+                    <div uk-form-custom="target: true">
+                        <input type="file" name="profile_pic">
+                        <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+                    </div>
+                    <button class="uk-button uk-button-default">Submit</button>
+                </div>
+             </form>
+        </div>
+    </div>
+
+{% endblock %}
+
