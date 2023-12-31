@@ -1,11 +1,9 @@
 # Student-Portal
-# Open Source Student Portal
 #  Features!
   - Student login 
   - result
   - Notification
   - Fees pay
-  - individiual chat ( not yet implimented)
 ### Tech
 ```
 * Python
@@ -18,8 +16,7 @@
 This requires Python Django to run.
 Install the dependencies and devDependencies and start the server.
 ```sh
-$ git clone https://github.com/nkkumawat/Student-Portal
-$ cd Student-Portal
+$ git clone https://github.com/BSSE23087/fee-portal-student
 $ python manage.py runserver
 ```
 Verify the deployment by navigating to your server address in your preferred browser.
